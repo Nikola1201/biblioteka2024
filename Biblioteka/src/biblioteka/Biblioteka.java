@@ -1,33 +1,43 @@
 package biblioteka;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import biblioteka.interfejs.BibliotekaInterfejs;
 
 public class Biblioteka implements BibliotekaInterfejs {
 
+	private List<Knjiga> knjige = new ArrayList<Knjiga>();
+
 	@Override
 	public void dodajKnjigu(Knjiga k) {
-		// TODO Auto-generated method stub
-
+		
+		knjige.add(k);
 	}
 
 	@Override
 	public void obrisiKnjigu(Knjiga k) {
-		// TODO Auto-generated method stub
-
+		
+		knjige.remove(k);
 	}
 
 	@Override
 	public List<Knjiga> vratiSveKnjige() {
-		// TODO Auto-generated method stub
-		return null;
+		return knjige;
 	}
 
 	@Override
 	public List<Knjiga> pronadjiKnjigu(Autor autor, long isbn, String naslov, String izdavac) {
-		// TODO Auto-generated method stub
-		return null;
+		if( naslov==null && isbn==0 && autor ==null&&izdavac==null)
+			return null;
+		
+		List<Knjiga> result = new ArrayList<Knjiga>();
+		
+		for (Knjiga knjiga : knjige) {
+			if(knjiga.getNaslov().toUpperCase().contains(naslov.toUpperCase())) 
+				result.add(knjiga);
+		}
+		return result;
 	}
 
 }
