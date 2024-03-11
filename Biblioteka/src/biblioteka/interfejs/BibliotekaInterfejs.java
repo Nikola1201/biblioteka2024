@@ -13,6 +13,8 @@ public interface BibliotekaInterfejs {
 	
 	public List<Knjiga> vratiSveKnjige();
 	
-	public List<Knjiga> pronadjiKnjigu(Autor autor, long isbn, String naslov, String izdavac);
+	public List<Knjiga> pronadjiKnjigu(Autor autor, long isbn,
+			String naslov, String izdavac);
+
 	
 }

@@ -1,4 +1,4 @@
-package biblioteka;
+ package biblioteka;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,14 +40,15 @@ public class Biblioteka implements BibliotekaInterfejs {
 	@Override
 	public List<Knjiga> pronadjiKnjigu(Autor autor, long isbn, String naslov, String izdavac) {
 		if (autor == null && isbn == 0 && naslov == null && izdavac == null)
-			throw new IllegalArgumentException("Morate imati barem jedan kriterijum");
+			throw new IllegalArgumentException("Morate uneti bar jedan kriterijum");
 		
-		List<Knjiga> result = new ArrayList<Knjiga>();
-		for (Knjiga knjiga : knjige) {
-			if(knjiga.getNaslov().toUpperCase().contains(naslov.toUpperCase())) 
-				result.add(knjiga);
-		}
-		return result;
+		List<Knjiga> rezultati = new ArrayList<Knjiga>();
+
+		for (Knjiga k : knjige)
+			if ( k.getNaslov().toUpperCase().contains(naslov.toUpperCase())  )
+				rezultati.add(k);
+		
+		return rezultati;
 	}
 
 }

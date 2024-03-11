@@ -46,11 +46,6 @@ public class Autor {
 	}
 
 	@Override
-	public int hashCode() {
-		return Objects.hash(ime, prezime);
-	}
-
-	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -61,5 +56,7 @@ public class Autor {
 		Autor other = (Autor) obj;
 		return Objects.equals(ime, other.ime) && Objects.equals(prezime, other.prezime);
 	}
+
+	
 	
 }

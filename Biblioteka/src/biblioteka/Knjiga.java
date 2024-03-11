@@ -5,7 +5,6 @@ import java.util.Objects;
 
 public class Knjiga {
 
-	//javni tekst
 	private String naslov;
 
 	private long isbn;
